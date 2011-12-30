@@ -61,7 +61,7 @@ public class MySQLDataStore implements DataStore<Connection> {
 		p.setJmxEnabled(true);
 		p.setMaxActive(configuration.getIntValue("jdbc.maxActive"));
 		p.setMaxIdle(configuration.getIntValue("jdbc.maxIdle"));
-
+		p.setJdbcInterceptors(configuration.getString("jdbc.jdbcInterceptors"));
 		pool = new DataSource();
 		pool.setPoolProperties(p);
 
